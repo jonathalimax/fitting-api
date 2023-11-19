@@ -1,5 +1,5 @@
 export enum TimerState {
-  Scheduled = "scheduled",
-  Triggered = "triggered",
-  Canceled = "canceled",
+  SCHEDULED = 'scheduled',
+  TRIGGERED = 'triggered',
+  CANCELED = 'canceled',
 }

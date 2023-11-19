@@ -1,14 +1,15 @@
 import { Module, OnApplicationBootstrap } from '@nestjs/common'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
 import { TimerModule } from './timer/timer.module'
 import { FirebaseAppModule } from './firebase/firebase.module'
-import { FirestoreListenerService } from './firebase/firestore-listener.service'
+import { FirestoreListenerService } from './firebase/firebase-listener.service'
+import { RestModule } from './rest/rest.module'
+import { SchedulerModule } from './scheduler/scheduler.module'
+import { SchedulerService } from './scheduler/scheduler.service'
 
 @Module({
-  imports: [TimerModule, FirebaseAppModule],
-  controllers: [AppController],
-  providers: [AppService, FirestoreListenerService],
+  imports: [TimerModule, FirebaseAppModule, RestModule, SchedulerModule],
+  controllers: [],
+  providers: [FirestoreListenerService, SchedulerService],
 })
 export class AppModule implements OnApplicationBootstrap {
   constructor(

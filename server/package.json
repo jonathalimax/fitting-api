@@ -23,6 +23,7 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
+    "@google-cloud/scheduler": "^4.0.1",
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/mapped-types": "^2.0.3",

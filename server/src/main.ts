@@ -6,7 +6,7 @@ import * as express from 'express'
 
 const server = express()
 
-const createFunction = async (expressInstance): Promise<void> => {
+const bootstrap = async (expressInstance): Promise<void> => {
   const app = await NestFactory.create(
     AppModule,
     new ExpressAdapter(expressInstance),
@@ -16,6 +16,6 @@ const createFunction = async (expressInstance): Promise<void> => {
 }
 
 export const api = functions.https.onRequest(async (request, response) => {
-  await createFunction(server)
+  await bootstrap(server)
   server(request, response)
 })
